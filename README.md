@@ -2,7 +2,7 @@
 
 Yolov5 Demo using Streamlit for Statistical ML Course 
 
-#Requirements 
+# Requirements 
 
 Run: 
 
@@ -10,7 +10,7 @@ Run:
 pip install -r requirements.txt
 ```
 
-#Streamlit 
+# Streamlit 
 
 Run: 
 
@@ -18,6 +18,7 @@ Run:
 streamlit app.py 
 ```
 
-#Notice: 
+# Notice: 
+
 Clear cache if switching between datasets for better prediction. 
 
