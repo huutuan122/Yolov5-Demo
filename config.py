@@ -1,4 +1,4 @@
-from streamlit_webrtc import ClientSettings
+# from streamlit_webrtc import ClientSettings
 
 CLASSES = ['Bird', 'Cat', 'Dog', 'Monkey', 'Squirrel']
 
