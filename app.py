@@ -21,7 +21,7 @@ st.title('Statisical Machine Learning - Yolov5')
 
 #Route 
 
-@st.cache(max_entries=1, allow_output_mutation= True)
+@st.cache(allow_output_mutation= True)
 def get_yolo5(model_type='s',dataset='custom'):
     '''
     Load yolov5 model by using torch hub
@@ -105,7 +105,7 @@ class VideoTransformer(VideoTransformerBase):
 dataset = st.sidebar.selectbox(
     'Select dataset',
     ('yolov5','custom'),
-    index=1,
+    index=1, 
     format_func=lambda s: s.upper())
 
 print(dataset)
