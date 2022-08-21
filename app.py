@@ -8,7 +8,6 @@ import streamlit as st
 from streamlit import caching
 import matplotlib.colors as mcolors
 from PIL import Image
-# from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 
 from config import CLASSES, CLASSES_YOLOV5
 
@@ -73,31 +72,6 @@ def get_legend_color(class_name : int):
     color = rgb_colors[index]
     return 'background-color: rgb({color[0]},{color[1]},{color[2]})'.format(color=color)
 
-# class VideoTransformer(VideoTransformerBase):
-#     def __init__(self):
-#         self.model = model
-#         self.rgb_colors = rgb_colors
-#         self.target_class_ids = target_class_ids
-
-#     def get_preds(self, img : np.ndarray) -> np.ndarray:
-#         return self.model([img]).xyxy[0].numpy()
-
-#     def transform(self, frame):
-#         img = frame.to_ndarray(format="bgr24")
-#         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-#         result = self.get_preds(img)
-#         result = result[np.isin(result[:,-1], self.target_class_ids)]
-        
-#         for bbox_data in result:
-#             xmin, ymin, xmax, ymax, _, label = bbox_data
-#             p0, p1, label = (int(xmin), int(ymin)), (int(xmax), int(ymax)), int(label)
-#             img = cv2.rectangle(img, 
-#                                     p0, p1, 
-#                                     self.rgb_colors[label], 2) 
-
-#         return cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-
 
 
 #Load model
@@ -148,12 +122,16 @@ detected_ids = None
 
 if prediction_mode == 'Single image':
 
+    #Upload image 
     uploaded_file = st.file_uploader(
         "Choose an image",
         type=['png', 'jpg', 'jpeg'])
 
     if uploaded_file is not None:
-
+        
+        
+        #Get the result information
+        
         bytes_data = uploaded_file.getvalue()
         file_bytes = np.asarray(bytearray(bytes_data), dtype=np.uint8)
         img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
@@ -166,6 +144,8 @@ if prediction_mode == 'Single image':
         
 
         detected_ids = []
+        
+        #Draw bounding box
         img_draw = img.copy().astype(np.uint8)
         for bbox_data in result_copy:
             xmin, ymin, xmax, ymax, _, label = bbox_data
@@ -174,7 +154,7 @@ if prediction_mode == 'Single image':
                                     p0, p1, 
                                     rgb_colors[label], 1) 
             
-            #Test 
+            #Add label on the image 
             cv2.putText(img_draw, CLASSES[label], (p0[0],p0[1]-5), cv2.FONT_HERSHEY_SIMPLEX, 0.3, rgb_colors[label],1)
             
             detected_ids.append(label)
