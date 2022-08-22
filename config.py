@@ -1,7 +1,8 @@
 # from streamlit_webrtc import ClientSettings
 
-CLASSES = ['Bird', 'Cat', 'Dog', 'Monkey', 'Squirrel']
+CLASSES_ANIMALS = ['Bird', 'Cat', 'Dog', 'Monkey', 'Squirrel']
 
+CLASSES_FRUITS = ['apple', 'cantaloupe', 'grape', 'lemon', 'melon', 'musang_king', 'orange', 'pear', 'pineapple', 'pitaya', 'watermelon']
 
 CLASSES_YOLOV5 = [ 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 
             'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 
