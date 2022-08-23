@@ -1,7 +1,8 @@
-from streamlit_webrtc import ClientSettings
+# from streamlit_webrtc import ClientSettings
 
-CLASSES = ['Bird', 'Cat', 'Dog', 'Monkey', 'Squirrel']
+CLASSES_ANIMALS = ['Bird', 'Cat', 'Dog', 'Monkey', 'Squirrel']
 
+CLASSES_FRUITS = ['apple', 'cantaloupe', 'grape', 'lemon', 'melon', 'musang_king', 'orange', 'pear', 'pineapple', 'pitaya', 'watermelon']
 
 CLASSES_YOLOV5 = [ 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 
             'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 
@@ -19,7 +20,3 @@ CLASSES_YOLOV5 = [ 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
             'scissors', 'teddy bear', 'hair drier', 'toothbrush' ]
 
 
-# WEBRTC_CLIENT_SETTINGS = ClientSettings(
-#         rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
-#         media_stream_constraints={"video": True, "audio": False},
-#     )

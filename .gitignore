@@ -1,4 +1,4 @@
 .vscode
 .ipynb_checkpoints
-*.pt
+yolov5s.pt
 __pycache__
