@@ -29,7 +29,7 @@ def get_yolo5(model_type="s", dataset="yolov5"):
     # Yolov5 Pretrained
 
     if dataset == "yolov5":
-        return torch.hub.load("ultralytics/yolov5", "yolov5s", pretrained=True)
+        return torch.hub.load("ultralytics/yolov5", "yolov5s", pretrained=True, force_reload=True)
     else:
         # Custom trained
         return torch.hub.load(
