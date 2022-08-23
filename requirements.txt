@@ -3,7 +3,7 @@ numpy==1.23.2
 opencv_python==4.5.1.48
 pandas==1.2.1
 Pillow==9.2.0
-streamlit==0.84.0
+streamlit==0.84.1
 # streamlit_webrtc==0.43.0
 torch==1.12.1
 torchvision==0.13.1
